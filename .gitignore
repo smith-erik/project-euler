@@ -1,0 +1,18 @@
+# To ignore binary files.
+
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+#
+!Makefile
+!README
+!LICENSE
+*.o
+*.d
+.DS_Store
