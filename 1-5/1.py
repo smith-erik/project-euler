@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 ceiling = int(input('Enter ceiling: '))
 sum = 0
 for i in range(1, ceiling + 1):
