@@ -11,7 +11,6 @@ def main():
                 x, y = a, b
     print("%d is the product of %d and %d." % (largest, x, y))
 
-
 def isPalindrome(x):
     if x < 10 or x % 10 == 0:
         return False
