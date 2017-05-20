@@ -1,14 +1,17 @@
+from math import floor, sqrt, ceil
 
 def main():
     n0 = 600851475143
-    n = n0
-    while (n > 1):
-        n = n - 1
-        if n0 % n == 0 and isPrime(n):
-            print(n)
+    maxprime = ceil(sqrt(n0))
+    print("Ceil of square root of 600851475143 is %d." % maxprime)
+    for i in range(maxprime - 1, 1, -1):
+        if n0 % i == 0 and isPrimeSlow(i):
+            print(str(i))
+            return
+    print("Reached end of loop.")
 
-def isPrime(x):
-    for i in range(1, x):
+def isPrimeSlow(x):
+    for i in range(2, x):
         if x % i == 0:
             return False
     return True
