@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from math import floor, sqrt, ceil
 
 def main():
