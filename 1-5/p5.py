@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+from p3 import fasterFactors
+
 def findSmalletDivisibleSlow(startHere, belowThis):
     count = startHere
     while count < belowThis:
@@ -20,10 +22,16 @@ def findSmalletDivisibleSlow2(startHere):
         i += 20
     return i
 
-primes20 = [3, 5, 7, 11, 13, 17, 19]
-start = 1
-for i in primes20:
-    start *= i
-print(str(start))
-x = findSmalletDivisibleSlow2(start)
-print(str(x))
+# primes20 = [3, 5, 7, 11, 13, 17, 19]
+# start = 1
+# for i in primes20:
+#     start *= i
+# print(str(start))
+# x = findSmalletDivisibleSlow2(start)
+# print(str(x))
+
+factors = fasterFactors(600851475143)
+for i in factors:
+    print(i, end = " ")
+print()
+
