@@ -9,6 +9,7 @@ def main():
 	nums.reverse()
 	print(nums)
 	print(len(nums))
+	print("test")
 
 
 
