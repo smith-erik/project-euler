@@ -1,3 +1,3 @@
 ### Project Euler
 Solutions to the problems presented at www.projecteuler.net.  
-Most of them are written in Python or C++.
+The solutions are written in Python, although I might redo a problem in C++ if the Python implementation proves to be too slow.
