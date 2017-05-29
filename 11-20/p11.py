@@ -41,9 +41,22 @@ def largestProd_diagonal(mx, n_factors):
     m = len(mx[0])
     for i in range(0, n):
         for j in range(0, m):
-            prod = 1
+            prod_rdiag, prod_ldiag = 1, 1
+            prod_up, prod_down, prod_r, prod_l = 1, 1, 1, 1
             for k in range(0, n_factors):
                 if not (i + k < n and j + k < m):
+                    break
+                else:
+                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
+                    break
+                else:
+                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
+                    break
+                else:
+                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
+                    break
+                else:
+                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
                     break
                 else:
                     prod *= mx[i + k][j + k]
