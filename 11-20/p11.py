@@ -35,6 +35,13 @@ def parse():
     return mx
 
 
+def inRange(i, j, n, m):
+    if i < 0 or i > (n - 1) or j < 0 or j > (m - 1):
+        return False
+    else:
+        return True
+
+
 def largestProd_diagonal(mx, n_factors):
     maxProd = 0
     n = len(mx)
@@ -44,27 +51,23 @@ def largestProd_diagonal(mx, n_factors):
             prod_rdiag, prod_ldiag = 1, 1
             prod_up, prod_down, prod_r, prod_l = 1, 1, 1, 1
             for k in range(0, n_factors):
-                if not (i + k < n and j + k < m):
-                    break
-                else:
-                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
-                    break
-                else:
-                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
-                    break
-                else:
-                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
-                    break
-                else:
-                    prod *= mx[i + k][j + k]if not (i + k < n and j + k < m):
-                    break
-                else:
-                    prod *= mx[i + k][j + k]
-            maxProd = prod if prod > maxProd else maxProd
+                if inRange(i + k, j + k, n, m):
+                    prod_rdiag *= mx[i + k][j + k]
+                if inRange(i + k, j - k, n, m):
+                    prod_ldiag *= mx[i + k][j - k]
+                if inRange(i - k, j, n, m):
+                    prod_up *= mx[i - k][j]
+                if inRange(i + k, j, n, m):
+                    prod_down *= mx[i + k][j]
+                if inRange(i, j + k, n, m):
+                    prod_r *= mx[i][j + k]
+                if inRange(i, j - k, n, m):
+                    prod_l *= mx[i][j - k]
+            prods = [prod_rdiag, prod_ldiag, prod_up, prod_down, prod_r, prod_l]
+            maxProd = max(prods) if max(prods) > maxProd else maxProd
     return maxProd
 
 if __name__ == "__main__":
-    # kolla up left down och diag both ways
     n = int(input("Please enter number of diagonal digits to use: "))
     mx = parse()
     ans = largestProd_diagonal(mx, n)
